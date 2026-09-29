@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --primary: #3265c3;
+  --secondary: #db3336;
+  --tertiary: #fdfbfb;
+  --primary-hover: #19479c;
+  --secondary-hover: #971b1f;
+  --tertiary-hover: #c4d9fc;
+  --primary-active: #6a97e7;
+  --secondary-active: #f86b63;
+  --tertiary-active: #e1ecff;
+  --primary-disabled: #3265c3;
+  --secondary-disabled: #db3336;
+  --tertiary-disabled: #fdfbfb;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-tertiary-hover: var(--tertiary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-secondary-active: var(--secondary-active);
+  --color-tertiary-active: var(--tertiary-active);
+  --color-primary-disabled: var(--primary-disabled);
+  --color-secondary-disabled: var(--secondary-disabled);
+  --color-tertiary-disabled: var(--tertiary-disabled);
+}
+
+@utility heading {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+@utility heading-2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+@utility heading-3 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1875;
+  letter-spacing: -0.03em;
+}
+
+@utility heading-4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.2222;
+  letter-spacing: -0.03em;
+}
+
+@utility para-lg {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+@utility para-md {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5625;
+  letter-spacing: -0.02em;
+}
+
+@utility para-sm {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.4286;
+  letter-spacing: 0;
+}
