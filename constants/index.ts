@@ -35,4 +35,4 @@ export const services = [
     panelClass: "bg-secondary",
     textClass: "text-white",
   },
-]
+];
