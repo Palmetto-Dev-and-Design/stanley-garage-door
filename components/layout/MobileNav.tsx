@@ -51,7 +51,7 @@ const MobileNav = () => {
         id="mobile-menu"
         inert={!open}
         className={cn(
-          "absolute inset-x-0 top-full z-50 origin-top border-b bg-background px-4 py-4 shadow-md transition duration-200",
+          "absolute inset-x-0 top-full z-50 origin-top shadow-[0_2px_2px_-2px_rgba(0,0,0,0.4)] bg-background px-4 py-4 transition duration-200",
           open
             ? "translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-2 opacity-0",
