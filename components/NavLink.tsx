@@ -9,7 +9,7 @@ const NavLink = ({ className }: { className?: string }) => {
   return (
     <ul
       className={cn(
-        "flex flex-col text-center md:text-left md:flex-row gap-6 pr-6",
+        "flex flex-col text-center md:text-left md:flex-row gap-6 pr-6 xl:gap-8 xl:pr-8",
         className,
       )}
     >
@@ -25,7 +25,7 @@ const NavLink = ({ className }: { className?: string }) => {
               variant={"ghost"}
               href={link}
               aria-current={isActive ? "page" : undefined}
-              className={cn("uppercase", isActive && "text-primary")}
+              className={cn("uppercase xl:para-md xl:font-bold", isActive && "text-primary")}
             >
               {title}
             </Button>
