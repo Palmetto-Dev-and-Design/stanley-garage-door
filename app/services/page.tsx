@@ -178,7 +178,7 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <CallToAction />
+      <CallToAction description="Give us a call or text and tell us what’s going on." />
     </>
   );
 };

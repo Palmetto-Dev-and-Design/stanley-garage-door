@@ -10,8 +10,6 @@ import { galleryPreview } from "@/constants";
 export default function RecentWork() {
   const [selected, setSelected] = useState<number | null>(null);
 
-  const current = selected !== null ? galleryPreview[selected] : null;
-
   return (
     <section className="page-container section-padding">
       <h2 className="heading-3 mb-6 xl:heading-2 xl:mb-10">Recent work</h2>
@@ -43,7 +41,11 @@ export default function RecentWork() {
         View gallery <ArrowUpRightIcon size={20} className="text-secondary" />
       </Link>
 
-      <Lightbox image={current} onClose={() => setSelected(null)} />
+      <Lightbox
+        images={galleryPreview}
+        index={selected}
+        onClose={() => setSelected(null)}
+      />
     </section>
   );
 }

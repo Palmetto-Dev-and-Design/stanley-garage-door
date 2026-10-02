@@ -8,7 +8,7 @@ type CallToActionProps = {
 };
 
 export default function CallToAction({
-  description = "Give us a call or text and tell us what’s going on.",
+  description = "Broken spring, damaged door or time for a replacement? Give us a call or text and tell us what’s going on.",
 }: CallToActionProps) {
   return (
     <section className="section-padding relative overflow-hidden bg-primary text-white">

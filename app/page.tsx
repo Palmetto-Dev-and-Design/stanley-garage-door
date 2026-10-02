@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <CallToAction description="Broken spring, damaged door or time for a replacement? Give us a call or text and tell us what’s going on." />
+      <CallToAction />
     </>
   );
 }
