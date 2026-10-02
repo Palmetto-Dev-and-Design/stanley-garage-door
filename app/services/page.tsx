@@ -8,6 +8,7 @@ import {
 import Image from "next/image";
 import MapClient from "@/components/MapClient";
 import Button from "@/components/primitives/Button";
+import CallToAction from "@/components/sections/CallToAction";
 import { cn } from "@/lib/utils";
 
 const springPhotos = [
@@ -175,6 +176,9 @@ const Services = () => {
           </p>
         </div>
       </section>
+
+      {/* CTA */}
+      <CallToAction />
     </>
   );
 };
