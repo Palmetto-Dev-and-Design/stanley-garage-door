@@ -1,21 +1,14 @@
 "use client";
 
-import { ArrowUpRightIcon, XIcon } from "@phosphor-icons/react";
+import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import Lightbox from "@/components/Lightbox";
 import { galleryPreview } from "@/constants";
 
 export default function RecentWork() {
-  const dialogRef = useRef<HTMLDialogElement>(null);
   const [selected, setSelected] = useState<number | null>(null);
-
-  const open = (index: number) => {
-    setSelected(index);
-    dialogRef.current?.showModal();
-  };
-
-  const close = () => dialogRef.current?.close();
 
   const current = selected !== null ? galleryPreview[selected] : null;
 
@@ -28,7 +21,7 @@ export default function RecentWork() {
           <button
             key={key}
             type="button"
-            onClick={() => open(i)}
+            onClick={() => setSelected(i)}
             aria-label={`View larger: ${alt}`}
             className="relative aspect-square cursor-zoom-in overflow-hidden rounded-2xl"
           >
@@ -50,38 +43,7 @@ export default function RecentWork() {
         View gallery <ArrowUpRightIcon size={20} className="text-secondary" />
       </Link>
 
-      {/* Lightbox */}
-      <dialog
-        ref={dialogRef}
-        onClose={() => setSelected(null)}
-        onClick={(e) => {
-          if (e.target === e.currentTarget) close();
-        }}
-        onKeyDown={(e) => {
-          if (e.key === "Escape") close();
-        }}
-        className="m-auto h-[85vh] w-[92vw] max-w-5xl bg-transparent p-0 backdrop:bg-black/80"
-      >
-        {current && (
-          <div className="relative h-full w-full">
-            <Image
-              src={current.image}
-              alt={current.alt}
-              fill
-              sizes="92vw"
-              className="object-contain"
-            />
-            <button
-              type="button"
-              onClick={close}
-              aria-label="Close"
-              className="absolute right-2 top-2 rounded-full bg-black/60 p-2 text-white hover:bg-black/80"
-            >
-              <XIcon size={24} />
-            </button>
-          </div>
-        )}
-      </dialog>
+      <Lightbox image={current} onClose={() => setSelected(null)} />
     </section>
   );
 }
