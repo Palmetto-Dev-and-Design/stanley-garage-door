@@ -1,6 +1,6 @@
 const Gallery = () => {
   return (
-    <div>
+    <div className="page-container section-padding">
       <p>Gallery Page</p>
     </div>
   );

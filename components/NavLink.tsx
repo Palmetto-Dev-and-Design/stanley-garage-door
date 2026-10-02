@@ -25,7 +25,10 @@ const NavLink = ({ className }: { className?: string }) => {
               variant={"ghost"}
               href={link}
               aria-current={isActive ? "page" : undefined}
-              className={cn("uppercase xl:para-md xl:font-bold", isActive && "text-primary")}
+              className={cn(
+                "uppercase xl:para-md xl:font-bold",
+                isActive && "text-primary",
+              )}
             >
               {title}
             </Button>

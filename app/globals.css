@@ -32,6 +32,14 @@
   --color-tertiary-disabled: var(--tertiary-disabled);
 }
 
+@utility page-container {
+  @apply mx-auto w-full max-w-6xl px-5;
+}
+
+@utility section-padding {
+  @apply py-16 xl:py-24;
+}
+
 @utility heading {
   font-size: 3rem;
   font-weight: 700;

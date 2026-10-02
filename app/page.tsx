@@ -63,7 +63,7 @@ export default function Home() {
             className="object-contain object-center lg:object-right xl:object-bottom-right"
           />
         </div>
-        <div className="relative z-10 mx-auto flex min-h-[600px] max-w-6xl flex-col items-center justify-center px-4 py-16 text-center lg:min-h-[700px] lg:items-start lg:text-left">
+        <div className="page-container relative z-10 flex min-h-[600px] flex-col items-center justify-center py-16 text-center lg:min-h-[700px] lg:items-start lg:text-left">
           <p className="para-xs font-semibold uppercase text-primary md:para-lg">
             Stanley Garage Door Specialist
           </p>
@@ -82,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="mx-auto grid max-w-6xl grid-cols-1 gap-4 lg:gap-12 px-4 sm:grid-cols-3 pb-16 md:py-16 lg:py-20">
+      <section className="page-container grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3 md:pt-16 lg:gap-12 xl:py-24">
         {services.map((service) => (
           <ServiceCard key={service.title} {...service} />
         ))}
@@ -91,7 +91,7 @@ export default function Home() {
       <hr className="text-neutral-200" />
 
       {/* About */}
-      <section className="mx-auto max-w-4xl px-5 py-16 lg:grid lg:max-w-6xl lg:grid-cols-[auto_1fr] lg:items-center lg:gap-16 xl:gap-20 xl:py-24">
+      <section className="page-container section-padding lg:grid lg:grid-cols-[auto_1fr] lg:items-center lg:gap-16 xl:gap-20">
         <div className="mx-auto w-80 overflow-hidden rounded-2xl bg-primary lg:mx-0 lg:w-96 xl:w-md">
           <Image
             src={"/ryan-kirk.png"}
@@ -120,16 +120,13 @@ export default function Home() {
       <hr className="text-neutral-200" />
 
       {/* Why us */}
-      <section className="mx-auto max-w-6xl py-16 md:px-16 lg:px-5 xl:py-24">
-        <h2 className="heading-3 mb-6 px-5 lg:mb-10 lg:px-0 xl:mb-14 xl:heading-2">
+      <section className="page-container section-padding">
+        <h2 className="heading-3 mb-6 lg:mb-10 xl:mb-14 xl:heading-2">
           Why choose us?
         </h2>
-        <div className="lg:grid lg:grid-cols-3 lg:gap-12 xl:gap-16">
+        <div className="md:px-16 lg:grid lg:grid-cols-3 lg:gap-12 lg:px-0 xl:gap-16">
           {reasons.map(({ icon, title, description }) => (
-            <div
-              key={title}
-              className="flex items-start gap-4 px-8 py-4 md:px-28 lg:px-0"
-            >
+            <div key={title} className="flex items-start gap-4 py-4">
               {icon}
               <div>
                 <h3 className="para-md font-bold uppercase xl:para-lg xl:font-bold">
@@ -150,7 +147,7 @@ export default function Home() {
       <hr className="text-neutral-200" />
 
       {/* Brands we trust */}
-      <section className="flex flex-col items-center py-16 xl:py-24">
+      <section className="page-container section-padding flex flex-col items-center">
         <h2 className="heading-3 uppercase xl:heading-2">Brands we trust</h2>
         <div className="flex flex-wrap items-center justify-center gap-4 py-8 md:gap-8 lg:gap-12 xl:gap-16 xl:pt-12">
           {brands.map(({ key, logo, alt, link }) => (
@@ -173,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-primary py-16 text-white xl:py-24">
+      <section className="section-padding relative overflow-hidden bg-primary text-white">
         <Image
           src="/palm-trees.png"
           alt=""
@@ -181,27 +178,29 @@ export default function Home() {
           sizes="100vw"
           className="pointer-events-none object-cover object-center lg:object-contain lg:object-left opacity-20"
         />
-        <div className="relative z-10 flex flex-col gap-4 px-5 md:px-32 lg:px-100 xl:mx-auto xl:max-w-3xl xl:gap-6 xl:px-5">
-          <h2 className="heading-3 text-center xl:heading-2">
-            Need help with your garage door?
-          </h2>
-          <p className="text-center xl:para-lg">
-            Broken spring, damaged door or time for a replacement? Give us a
-            call or text and tell us what&apos;s going on.
-          </p>
-          <p className="flex items-center justify-center gap-2">
-            <PhoneTransferIcon
-              size={28}
-              weight="fill"
-              className="text-white xl:size-9"
-            />
-            <Link
-              href="tel:+17273205799"
-              className="heading-4 font-bold xl:text-2xl"
-            >
-              (727) 320-5799
-            </Link>
-          </p>
+        <div className="page-container relative z-10">
+          <div className="mx-auto flex max-w-3xl flex-col gap-4 xl:gap-6">
+            <h2 className="heading-3 text-center xl:heading-2">
+              Need help with your garage door?
+            </h2>
+            <p className="text-center xl:para-lg">
+              Broken spring, damaged door or time for a replacement? Give us a
+              call or text and tell us what&apos;s going on.
+            </p>
+            <p className="flex items-center justify-center gap-2">
+              <PhoneTransferIcon
+                size={28}
+                weight="fill"
+                className="text-white xl:size-9"
+              />
+              <Link
+                href="tel:+17273205799"
+                className="heading-4 font-bold xl:text-2xl"
+              >
+                (727) 320-5799
+              </Link>
+            </p>
+          </div>
         </div>
       </section>
     </>

@@ -20,7 +20,7 @@ export default function RecentWork() {
   const current = selected !== null ? galleryPreview[selected] : null;
 
   return (
-    <section className="mx-auto max-w-6xl px-5 py-16">
+    <section className="page-container section-padding">
       <h2 className="heading-3 mb-6 xl:heading-2 xl:mb-10">Recent work</h2>
 
       <div className="grid grid-cols-2 gap-2 md:gap-3 lg:grid-cols-4">

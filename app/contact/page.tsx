@@ -1,6 +1,6 @@
 const Contact = () => {
   return (
-    <div>
+    <div className="page-container section-padding">
       <p>Contact Page</p>
     </div>
   );
