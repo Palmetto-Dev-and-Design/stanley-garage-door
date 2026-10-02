@@ -56,59 +56,64 @@ const Footer = () => {
   return (
     <footer className="w-full shadow-[0_-2px_2px_-2px_rgba(0,0,0,0.4)] px-12">
       <div className="flex flex-col md:flex-row md:justify-between md:items-center">
-        <div className="flex flex-col items-center py-12 gap-6">
-          <Image
-            src={"/footer-logo.png"}
-            alt="logo with the words Stanley Garage Door Specialist"
-            width={350}
-            height={67}
-          />
-          <ul className="flex gap-4">
-            {socials.map(({ logo, link, label, external }) => (
-              <li key={link}>
-                <Link
-                  href={link}
-                  className="hover:text-primary"
-                  aria-label={label}
-                  {...(external && {
-                    target: "_blank",
-                    rel: "noopener noreferrer",
-                  })}
-                >
-                  {logo}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="hidden md:flex flex-col gap-4">
-          <div className="flex items-center gap-2">
-            <DeviceMobileIcon size={32} />
-            <div>
-              <p>
-                <span className="uppercase para-sm font-semibold">
-                  Cell phone -{" "}
-                </span>
-                <span className="para-xs">Call or text</span>
-              </p>
-              <Link
-                href={"tel:+17273205799"}
-                className="text-primary font-bold para-lg"
-              >
-                (727) 320-5799
-              </Link>
-            </div>
+        {/* Tablet: logo and phones stack in one column. Desktop: `lg:contents`
+            lets them become separate columns alongside the sitemap. */}
+        <div className="flex flex-col lg:contents">
+          <div className="flex flex-col items-center py-12 gap-6">
+            <Image
+              src={"/footer-logo.png"}
+              alt="logo with the words Stanley Garage Door Specialist"
+              width={350}
+              height={67}
+            />
+            <ul className="flex gap-4">
+              {socials.map(({ logo, link, label, external }) => (
+                <li key={link}>
+                  <Link
+                    href={link}
+                    className="hover:text-primary"
+                    aria-label={label}
+                    {...(external && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
+                  >
+                    {logo}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <div className="flex items-center gap-2">
-            <PhoneIcon size={32} />
-            <div>
-              <p className="uppercase para-sm font-semibold">Office</p>
-              <Link
-                href={"tel:+17275260812"}
-                className="text-primary font-bold para-lg"
-              >
-                (727) 526-0812
-              </Link>
+          <hr className="hidden text-neutral-200 md:block lg:hidden" />
+          <div className="hidden md:flex flex-col gap-4 md:self-center md:py-8 lg:py-0">
+            <div className="flex items-center gap-2">
+              <DeviceMobileIcon size={32} />
+              <div>
+                <p>
+                  <span className="uppercase para-sm font-semibold">
+                    Cell phone -{" "}
+                  </span>
+                  <span className="para-xs">Call or text</span>
+                </p>
+                <Link
+                  href={"tel:+17273205799"}
+                  className="text-primary font-bold para-lg"
+                >
+                  (727) 320-5799
+                </Link>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <PhoneIcon size={32} />
+              <div>
+                <p className="uppercase para-sm font-semibold">Office</p>
+                <Link
+                  href={"tel:+17275260812"}
+                  className="text-primary font-bold para-lg"
+                >
+                  (727) 526-0812
+                </Link>
+              </div>
             </div>
           </div>
         </div>

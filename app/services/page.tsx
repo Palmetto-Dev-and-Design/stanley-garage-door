@@ -78,7 +78,7 @@ const Services = () => {
       <section className="section-padding bg-primary text-white">
         <div className="page-container flex flex-col items-center lg:flex-row lg:gap-12 xl:gap-16">
           <div className="flex flex-col items-center lg:max-w-xs lg:shrink-0 lg:flex-row lg:items-start lg:gap-4 xl:max-w-sm">
-            <div className="mb-6 flex shrink-0 items-center justify-center rounded-full bg-white p-3 text-primary lg:mb-0 lg:p-2">
+            <div className="mb-6 flex shrink-0 items-center justify-center rounded-full bg-primary-soft p-3 text-primary lg:mb-0 lg:p-2">
               <WrenchIcon size={32} weight="fill" className="lg:size-6" />
             </div>
             <div className="text-center lg:text-left">
@@ -118,28 +118,30 @@ const Services = () => {
       </section>
 
       {/* Service list */}
-      <section className="page-container section-padding flex flex-col gap-5 lg:grid lg:grid-cols-3 lg:gap-x-10 lg:gap-y-6">
-        {serviceList.map(({ Icon, title, items }) => (
-          <div
-            key={title}
-            className="flex items-start gap-5 p-5 lg:gap-6 lg:px-10 lg:py-8"
-          >
-            <Icon size={40} weight="fill" className="shrink-0 text-primary" />
-            <div className="flex flex-1 flex-col gap-2">
-              <h3 className="para-md font-bold text-foreground xl:para-lg xl:font-bold">
-                {title}
-              </h3>
-              <ul className="list-disc para-sm text-foreground-subtle xl:para-md">
-                {items.map((item) => (
-                  <li key={item} className="ms-6">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+      <section className="page-container section-padding flex flex-col gap-9 lg:gap-10">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-x-6 lg:gap-x-10">
+          {serviceList.map(({ Icon, title, items }) => (
+            <div
+              key={title}
+              className="flex items-start gap-5 p-5 md:gap-4 md:px-0 lg:gap-6 lg:px-10 lg:py-8"
+            >
+              <Icon size={40} weight="fill" className="shrink-0 text-primary" />
+              <div className="flex flex-1 flex-col gap-2">
+                <h3 className="para-md font-bold text-foreground xl:para-lg xl:font-bold">
+                  {title}
+                </h3>
+                <ul className="list-disc para-sm text-foreground-subtle xl:para-md">
+                  {items.map((item) => (
+                    <li key={item} className="ms-6">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
-        ))}
-        <div className="flex flex-col items-start gap-6 rounded-xl bg-primary px-5 py-8 text-tertiary shadow-section lg:col-span-3 lg:flex-row lg:items-center lg:gap-8 lg:rounded-2xl lg:p-10">
+          ))}
+        </div>
+        <div className="flex flex-col items-start gap-6 rounded-xl bg-primary px-5 py-8 text-tertiary shadow-section lg:flex-row lg:items-center lg:gap-8 lg:rounded-2xl lg:p-10">
           <div className="flex flex-col gap-6 lg:flex-1 lg:flex-row lg:items-center lg:gap-10">
             <h2 className="heading-3 xl:heading-2">
               Not sure what&rsquo;s wrong?

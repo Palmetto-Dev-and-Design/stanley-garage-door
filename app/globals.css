@@ -16,6 +16,8 @@
   --tertiary-disabled: #fdfbfb;
   --foreground: #303030;
   --foreground-subtle: #6b6a6a;
+  --surface: #fcfcfc;
+  --primary-soft: #c4d9fc;
   --shadow-color: #e8e8e8;
 }
 
@@ -35,6 +37,8 @@
   --color-tertiary-disabled: var(--tertiary-disabled);
   --color-foreground: var(--foreground);
   --color-foreground-subtle: var(--foreground-subtle);
+  --color-surface: var(--surface);
+  --color-primary-soft: var(--primary-soft);
   --shadow-section:
     1.5px 1.5px 2px 0 var(--shadow-color),
     -1.5px -1.5px 2px 0 var(--shadow-color);

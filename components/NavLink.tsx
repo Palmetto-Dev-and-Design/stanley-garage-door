@@ -3,6 +3,11 @@ import { navigation } from "@/constants";
 import { cn } from "@/lib/utils";
 import Button from "./primitives/Button";
 
+export const isActiveLink = (pathname: string, link: string) =>
+  link === "/"
+    ? pathname === "/"
+    : pathname === link || pathname.startsWith(`${link}/`);
+
 const NavLink = ({ className }: { className?: string }) => {
   const pathname = usePathname();
 
@@ -14,10 +19,7 @@ const NavLink = ({ className }: { className?: string }) => {
       )}
     >
       {navigation.map(({ title, link }) => {
-        const isActive =
-          link === "/"
-            ? pathname === "/"
-            : pathname === link || pathname.startsWith(`${link}/`);
+        const isActive = isActiveLink(pathname, link);
 
         return (
           <li key={title}>

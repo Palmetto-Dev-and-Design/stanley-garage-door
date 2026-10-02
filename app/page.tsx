@@ -53,7 +53,7 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <div className="bg-surface">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 opacity-20 lg:left-auto lg:right-[max(5%,calc((100%_-_72rem)/2))] lg:w-[48%] lg:translate-y-20 lg:opacity-100 xl:translate-x-4 xl:translate-y-30 xl:right-[max(8%,calc((100%_-_72rem)/2))]">
@@ -71,7 +71,7 @@ export default function Home() {
           <h1 className="mt-3 heading-3 md:heading max-w-200 xl:max-w-233 xl:text-[3.5rem]">
             Garage door service built on generations of experience
           </h1>
-          <p className="my-6 max-w-120 para-sm md:para-lg">
+          <p className="mt-6 mb-8 max-w-120 para-sm md:para-lg">
             Family-owned garage door repair, installation and spring services
             proudly serving <strong>Tampa Bay and Pinellas County</strong>.
           </p>
@@ -92,29 +92,32 @@ export default function Home() {
       <hr className="text-neutral-200" />
 
       {/* About */}
-      <section className="page-container section-padding lg:grid lg:grid-cols-[auto_1fr] lg:items-center lg:gap-16 xl:gap-20">
-        <div className="mx-auto w-80 overflow-hidden rounded-2xl bg-primary lg:mx-0 lg:w-96 xl:w-md">
-          <Image
-            src={"/ryan-kirk.png"}
-            alt="Ryan and Kirk Stanley"
-            width={326}
-            height={300}
-            className="h-auto w-full"
-          />
-        </div>
-        <div className="pt-8 md:px-16 lg:px-0 lg:pt-0">
-          <h2 className="heading-3 xl:heading-2">
-            Keeping the family tradition going
-          </h2>
-          <p className="para-md py-6 lg:max-w-xl xl:para-lg xl:py-8">
-            Garage doors have been the Stanley family business for generations.
-            Today, Ryan is carrying it forward, serving homeowners throughout
-            Tampa Bay with the experience that comes from growing up in the
-            trade.
-          </p>
-          <Button href="/about" size={"lg"} variant={"secondary"}>
-            Learn more about us
-          </Button>
+      <section className="bg-background">
+        <div className="page-container section-padding lg:grid lg:grid-cols-[auto_1fr] lg:items-center lg:gap-16 xl:gap-20">
+          <div className="mx-auto w-full overflow-hidden rounded-2xl bg-primary md:w-80 lg:mx-0 lg:w-96 xl:w-md">
+            <Image
+              src={"/ryan-kirk.png"}
+              alt="Ryan and Kirk Stanley"
+              width={326}
+              height={300}
+              sizes="(min-width: 1280px) 448px, (min-width: 1024px) 384px, (min-width: 768px) 320px, 100vw"
+              className="h-auto w-full"
+            />
+          </div>
+          <div className="pt-8 md:px-16 lg:px-0 lg:pt-0">
+            <h2 className="heading-3 xl:heading-2">
+              Keeping the family tradition going
+            </h2>
+            <p className="para-md py-6 lg:max-w-xl xl:para-lg xl:py-8">
+              Garage doors have been the Stanley family business for
+              generations. Today, Ryan is carrying it forward, serving
+              homeowners throughout Tampa Bay with the experience that comes
+              from growing up in the trade.
+            </p>
+            <Button href="/about" size={"lg"} variant={"secondary"}>
+              Learn more about us
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -148,9 +151,11 @@ export default function Home() {
       <hr className="text-neutral-200" />
 
       {/* Brands we trust */}
-      <section className="page-container section-padding flex flex-col items-center">
-        <h2 className="heading-3 uppercase xl:heading-2">Brands we trust</h2>
-        <div className="flex flex-wrap items-center justify-center gap-4 py-8 md:gap-8 lg:gap-12 xl:gap-16 xl:pt-12">
+      <section className="section-padding mx-auto flex w-full max-w-6xl flex-col items-center px-6">
+        <h2 className="text-sm leading-tight font-bold uppercase md:text-[1.375rem] lg:text-[1.875rem] xl:text-[2.375rem]">
+          Brands we trust
+        </h2>
+        <div className="flex flex-wrap items-center justify-center gap-8 py-8 xl:pt-12">
           {brands.map(({ key, logo, alt, link }) => (
             <Link
               key={key}
@@ -172,6 +177,6 @@ export default function Home() {
 
       {/* CTA */}
       <CallToAction />
-    </>
+    </div>
   );
 }
