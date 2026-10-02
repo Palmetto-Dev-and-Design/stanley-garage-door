@@ -6,9 +6,9 @@ import {
   WrenchIcon,
 } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
-import MapClient from "@/components/MapClient";
 import Button from "@/components/primitives/Button";
 import CallToAction from "@/components/sections/CallToAction";
+import ServiceArea from "@/components/sections/ServiceArea";
 import { cn } from "@/lib/utils";
 
 const springPhotos = [
@@ -82,10 +82,10 @@ const Services = () => {
               <WrenchIcon size={32} weight="fill" className="lg:size-6" />
             </div>
             <div className="text-center lg:text-left">
-              <h2 className="heading-4 md:heading-3 xl:heading-2">
+              <h2 className="heading-3 xl:heading-2">
                 Spring repair & conversion
               </h2>
-              <p className="mt-3 para-sm md:para-md xl:para-lg">
+              <p className="mt-3 para-md xl:para-lg">
                 Torsion springs, extension springs and torsion conversions.
               </p>
             </div>
@@ -126,10 +126,10 @@ const Services = () => {
           >
             <Icon size={40} weight="fill" className="shrink-0 text-primary" />
             <div className="flex flex-1 flex-col gap-2">
-              <h3 className="heading-4 text-foreground lg:text-2xl lg:font-bold lg:leading-normal">
+              <h3 className="para-md font-bold text-foreground xl:para-lg xl:font-bold">
                 {title}
               </h3>
-              <ul className="list-disc para-md text-foreground-subtle">
+              <ul className="list-disc para-sm text-foreground-subtle xl:para-md">
                 {items.map((item) => (
                   <li key={item} className="ms-6">
                     {item}
@@ -141,10 +141,10 @@ const Services = () => {
         ))}
         <div className="flex flex-col items-start gap-6 rounded-xl bg-primary px-5 py-8 text-tertiary shadow-section lg:col-span-3 lg:flex-row lg:items-center lg:gap-8 lg:rounded-2xl lg:p-10">
           <div className="flex flex-col gap-6 lg:flex-1 lg:flex-row lg:items-center lg:gap-10">
-            <h2 className="text-2xl font-bold tracking-[-0.025em]">
+            <h2 className="heading-3 xl:heading-2">
               Not sure what&rsquo;s wrong?
             </h2>
-            <p className="para-sm lg:para-md">
+            <p className="para-md xl:para-lg">
               Tell us what&rsquo;s going on &amp; we&rsquo;ll help figure it
               out.
             </p>
@@ -152,7 +152,8 @@ const Services = () => {
           <Button
             href="/contact"
             variant="tertiary"
-            className="h-11 gap-2 rounded-xl px-4 para-md font-bold lg:h-auto lg:px-5 lg:py-4"
+            size="lg"
+            className="gap-2"
           >
             <PhoneCallIcon size={20} weight="fill" className="text-secondary" />
             Contact us
@@ -160,22 +161,7 @@ const Services = () => {
         </div>
       </section>
       {/* Service area */}
-      <section className="flex flex-col gap-8 bg-background pb-16 shadow-section lg:grid lg:grid-cols-2 lg:gap-0 lg:pb-0">
-        <MapClient className="h-64 bg-neutral-200 lg:aspect-[778/502] lg:h-auto" />
-        <div className="flex flex-col justify-center gap-6 px-8 text-foreground lg:p-16 xl:p-24">
-          <h2 className="text-2xl font-bold tracking-[-0.025em] lg:heading-2 lg:tracking-normal">
-            Local to South Pinellas
-          </h2>
-          <p className="para-sm lg:para-md">
-            We live and work in the{" "}
-            <strong className="font-semibold">South Pinellas County</strong>{" "}
-            area.
-            <br />
-            Staying local means we can respond quickly when you need us,
-            including same-day and emergency service.
-          </p>
-        </div>
-      </section>
+      <ServiceArea />
 
       {/* CTA */}
       <CallToAction description="Give us a call or text and tell us what’s going on." />
