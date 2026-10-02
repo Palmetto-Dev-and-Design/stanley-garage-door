@@ -1,5 +1,13 @@
 import CallToAction from "@/components/sections/CallToAction";
 import GalleryCarousel from "@/components/sections/GalleryCarousel";
+import { buildMeta } from "@/utils/meta";
+
+export const metadata = buildMeta({
+  title: "Gallery",
+  description:
+    "See photos of garage door installations, repairs, and upgrades completed by Stanley Garage Door Specialist.",
+  path: "/gallery",
+});
 
 const Gallery = () => {
   return (

@@ -8,6 +8,14 @@ import {
 import Link from "next/link";
 import PhoneQR from "@/components/PhoneQR";
 import { cn } from "@/lib/utils";
+import { buildMeta } from "@/utils/meta";
+
+export const metadata = buildMeta({
+  title: "Contact Us",
+  description:
+    "Get in touch with Stanley Garage Door Specialist for a free estimate or same-day garage door service.",
+  path: "/contact",
+});
 
 const features = [
   {

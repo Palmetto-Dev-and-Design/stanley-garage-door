@@ -2,6 +2,14 @@ import { CaretRightIcon, CheckIcon } from "@phosphor-icons/react/ssr";
 import Image from "next/image";
 import CallToAction from "@/components/sections/CallToAction";
 import ServiceArea from "@/components/sections/ServiceArea";
+import { buildMeta } from "@/utils/meta";
+
+export const metadata = buildMeta({
+  title: "About Us",
+  description:
+    "Meet the team behind Stanley Garage Door Specialist, a local garage door company focused on honest pricing and dependable service.",
+  path: "/about",
+});
 
 const timeline = [
   {

@@ -11,6 +11,9 @@ import ServiceCard from "@/components/ServiceCard";
 import CallToAction from "@/components/sections/CallToAction";
 import RecentWork from "@/components/sections/RecentWork";
 import { brands, services } from "@/constants";
+import { buildMeta } from "@/utils/meta";
+
+export const metadata = buildMeta({ path: "/" });
 
 export default function Home() {
   const reasons = [

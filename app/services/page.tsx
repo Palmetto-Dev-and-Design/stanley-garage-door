@@ -10,6 +10,14 @@ import Button from "@/components/primitives/Button";
 import CallToAction from "@/components/sections/CallToAction";
 import ServiceArea from "@/components/sections/ServiceArea";
 import { cn } from "@/lib/utils";
+import { buildMeta } from "@/utils/meta";
+
+export const metadata = buildMeta({
+  title: "Services",
+  description:
+    "Garage door repair, installation, spring and opener replacement, and maintenance from Stanley Garage Door Specialist.",
+  path: "/services",
+});
 
 const springPhotos = [
   {
